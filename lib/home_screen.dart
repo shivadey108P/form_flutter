@@ -68,12 +68,11 @@ class _HomeScreenState extends State<HomeScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
-              radius: 50,
-              backgroundColor: Colors.red,
-              backgroundImage: gender == 'male'
-                  ? const AssetImage('images/girl.jpg')
-                  : const AssetImage('images/boy.jpg'),
-            ),
+                radius: 50,
+                backgroundColor: Colors.red,
+                backgroundImage: gender == 'Male'
+                    ? const AssetImage('images/boy.jpg')
+                    : const AssetImage('images/girl.jpg')),
             Text(
               name,
               style: const TextStyle(
@@ -133,13 +132,14 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             RoundedRectButton(
-                textInput: 'Logout',
-                onPressed: () {
-                  _auth.signOut();
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, LoginScreen.id, (Route<dynamic> route) => false);
-                },
-                colour: Colors.teal)
+              textInput: 'Logout',
+              onPressed: () {
+                _auth.signOut();
+                Navigator.pushNamedAndRemoveUntil(
+                    context, LoginScreen.id, (Route<dynamic> route) => false);
+              },
+              colour: Colors.teal,
+            ),
           ],
         ),
       ),
